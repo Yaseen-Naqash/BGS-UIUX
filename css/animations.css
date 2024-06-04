@@ -1,0 +1,183 @@
+/* animation slider */
+.animation-holder {
+    position: relative;
+    height: 70vh; /* Example height, adjusts with screen size */
+    width: 100vw;
+    overflow: hidden;
+    text-align: center;
+    background-color: #b06b41;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.layer1, .layer2, .layer3, .layer4, .movingtext, .background {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+/* sample */
+.slide1 .background {
+    background: url('../images/scythe/background.jpg') no-repeat center;
+
+    background-size: cover;
+    
+}
+
+.slide1 .layer1 {
+    background: url('../images/scythe/mec.png') no-repeat;
+    
+    background-size: contain;
+    animation: linearMoveRight 90s;
+}
+.slide1 .layer2 {
+    background: url('../images/scythe/character.png') no-repeat;
+    
+    background-size: contain;
+    animation: linearMoveLeft 90s;
+
+}
+.slide1 .layer3 {
+    background: url('') no-repeat;
+    
+    background-size: contain;
+}
+.slide1 .layer4 {
+    background: url('');
+    
+    background-size: contain;
+}
+.slide1 .movingtext {
+    background: url('../images/scythe//text.png')no-repeat;
+    top: 10px;
+    right: 10px;
+    width: 20vw; 
+    height: 20vh; 
+    background-size: contain;
+    animation: moveBottomLeft 10s;
+
+}
+
+
+
+
+/* scale down */
+@keyframes scaleDown {
+    0% { transform: scale(1); }
+    100% { transform: scale(0.7); }
+}
+
+/* scale up */
+@keyframes scaleUp {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.3); }
+}
+
+/* Ease in */
+@keyframes easeIn {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(0); }
+}
+
+/* Ease out */
+@keyframes easeOut {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+/* Linear move right */
+@keyframes linearMoveRight {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(100%); }
+}
+
+/* Linear move left */
+@keyframes linearMoveLeft {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-100%); }
+}
+
+/* Move diagonally top right */
+@keyframes moveTopRight {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100%, -100%); }
+}
+
+/* Move diagonally bottom right */
+@keyframes moveBottomRight {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(100%, 100%); }
+}
+
+/* Move diagonally top left */
+@keyframes moveTopLeft {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-100%, -100%); }
+}
+
+/* Move diagonally bottom left */
+@keyframes moveBottomLeft {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-40%, 40%); }
+}
+
+/* Sudden shaking */
+@keyframes suddenShaking {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    50% { transform: translateX(10px); }
+    75% { transform: translateX(-10px); }
+}
+
+/* Consistent shaking */
+@keyframes consistentShaking {
+    0%, 100% { transform: translateX(0); }
+    10% { transform: translateX(-5px); }
+    20% { transform: translateX(5px); }
+    30% { transform: translateX(-5px); }
+    40% { transform: translateX(5px); }
+    50% { transform: translateX(-5px); }
+    60% { transform: translateX(5px); }
+    70% { transform: translateX(-5px); }
+    80% { transform: translateX(5px); }
+    90% { transform: translateX(-5px); }
+}
+
+@media (min-width: 361px) and (max-width: 520px) { 
+    
+}
+@media (max-width: 360px) { 
+    
+}
+
+
+/* 
+
+use this to see result
+<div class="animation-holder">
+        
+        <div class="slide slide1">
+            <div class="background"></div>
+            <div class="layer1"></div>
+            <div class="layer2"></div>
+            <div class="layer3"></div>
+            <div class="movingtext"></div>
+        </div>
+    </div>
+    
+*/
