@@ -321,7 +321,8 @@ footer {
   color: var(--red-color);
   position: absolute;
   left: 0;
-  margin: 10px;
+  top: 0;
+  margin: 13px;
   font-size: 50px;
   cursor: pointer;
 }
@@ -354,6 +355,28 @@ footer {
     background-color: var(--red-color);
 }
 
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: transparent;
+  min-width: 160px;
+  
+  z-index: 1;
+}
+
+.dropdown-content a {
+  margin: 10px;
+  color:var(--red-color);
+  width: fit-content;
+  height: 40px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.show {
+  display: block;
+}
 
 
 /* Styles for mobile screens */
@@ -386,6 +409,10 @@ footer {
   }
   /* navbar turns into menu here */
 }
-@media screen and (max-width: 1262px ) and (min-width: 1098px) {
+@media screen and (max-width: 1306px ) and (min-width: 1024px) {
+  .navbar-links {
+    gap: 70px;
+    
+  }
    
 }

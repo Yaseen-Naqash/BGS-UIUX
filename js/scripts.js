@@ -52,10 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
   closeButton.innerHTML = '&times;';
   sidebar.appendChild(closeButton);
 
-
   const navbarMenu = document.querySelector('.navbar-links');
   const clonedMenu = document.createElement('ul');
-  
+
   navbarMenu.querySelectorAll('li').forEach(item => {
     if (!item.classList.contains('no-sidebar')) {
       const clonedItem = item.cloneNode(true);
@@ -72,5 +71,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
   closeButton.addEventListener('click', function() {
     sidebar.classList.remove('active');
+  });
+
+  document.querySelectorAll('.dropdown-toggle').forEach(dropdown => {
+    dropdown.addEventListener('click', function() {
+      this.nextElementSibling.classList.toggle('show');
+    });
   });
 });
