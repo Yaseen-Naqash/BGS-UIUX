@@ -35,6 +35,7 @@ input[type="text"], input[type="email"], input[type="password"], textarea, selec
   font-family:'Teshrin-bold'; /* Use your desired font family */
 }
 body {
+    margin: 12px;
     font-family: 'Teshrin-bold';
     line-height: 1.6;
     direction: rtl; 
@@ -69,11 +70,9 @@ footer {
   box-shadow: var(--red-color) 4px 4px 0 0;
   background-color: var(--primary-color) ;
   position: relative;
-  width: 100%;
-  max-width: 480px; /* Increased max-width for horizontal growth */
+  
   height: 40px; /* Reduced height */
   border-radius: 80px; /* Adjusted to match new height */
-  margin: 0 auto;
 }
 .search-box:hover{
   background-color: #fff;
@@ -170,7 +169,7 @@ footer {
   -o-transition: stroke-dashoffset 650ms cubic-bezier(0.755, 0.150, 0.205, 1.000);
 }
 #search {
-  font-family: 'Montserrat Alternates', sans-serif;
+  font-family:'Teshrin-bold';
   position: absolute;
   top: 0;
   left: 0;
@@ -273,34 +272,74 @@ footer {
     /* end of buttons */
 
 /* handy */
-.filler{
-  /* its for responsive purposes */
-  background-color: transparent;
-}
 .navbar{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  gap: 10px;
+  justify-content: space-around;
+  align-items: center;
+}
+.navbar-links{
   position: relative;
     margin-left: 20px;
     margin-right: 20px;
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 20px;
     flex-direction: row-reverse;
     justify-content:space-between;
-    align-items: center;
-    
-    
+    align-items: center;  
 }
-.felxbox{
-  display: flex;
-  flex-direction: row;
+
+/* navbar slide */
+.sidebar {
+  list-style: none;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  background-color: var(--primary-color);
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding: 30px;
 }
+
+.sidebar a {
+  
+  width: fit-content;
+  height: 40px;
+  display: block;
+  transition: 0.3s;
+  margin-bottom: 15px; /* Vertical gap between links */
+}
+
+.sidebar .close-btn {
+  color: var(--red-color);
+  position: absolute;
+  left: 0;
+  margin: 10px;
+  font-size: 50px;
+  cursor: pointer;
+}
+
+.navbar-toggle {
+  color: var(--red-color);
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
 .logo{
-    
-    
+    position: relative;
+    left: 0;
     min-width: 150px;
     max-width: 300px;
 }
+
 .user-box{
     text-align: center;
     padding: 5px;
@@ -309,6 +348,7 @@ footer {
     border-radius: 5px;
     background-color: var(--red-color);
 }
+
 .user-box:hover{
     opacity: 0.8;
     background-color: var(--red-color);
@@ -316,51 +356,36 @@ footer {
 
 
 
-
-
-
-/* end of headerR */
-.slogan{
-    text-align: center;
-
-    min-height: 100px;
-    background-color: aqua;
-}
-.filters{
-    text-align: center;
-    min-height: 50px;
-    background: #b06b41;
-}
-
 /* Styles for mobile screens */
 @media screen and (max-width: 520px) {
-    .header{
-        justify-content:space-evenly;
-        
-
-    }
+    
     
     
 }
 
 /* Styles for desktop screens */
-@media screen and (max-width: 660px) {
+@media screen and (max-width: 690px) {
+  .navbar-links {
+    display: none;
+    
+  }
+  
+  .navbar-toggle {
+    display: block;
+  }
+
+  .sidebar {
+    right: -250px; /* Hide sidebar by default */
+  }
+
+  .sidebar.active {
+    right: 0; /* Show sidebar when active */
+  }
+  .navbar .no-sidebar {
+    display: block;
+  }
   /* navbar turns into menu here */
 }
 @media screen and (max-width: 1262px ) and (min-width: 1098px) {
-    .filler{
-    width: 150px;
-    width: 300px;
-    }
-    .logo{
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-    .navbar{
-      
-      margin-top: 20px;
-      justify-content: start ;
-      
-    }
+   
 }
